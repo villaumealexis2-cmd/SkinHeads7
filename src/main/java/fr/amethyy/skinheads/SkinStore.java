@@ -88,7 +88,7 @@ public final class SkinStore {
     public boolean has(UUID id) { return entries.containsKey(id); }
     public Entry get(UUID id) { return entries.get(id); }
     public int size() { return entries.size(); }
-    public Collection<Entry> all() { return new ArrayList<>(entries.values()); }
+    public List<Entry> all() { return new ArrayList<>(entries.values()); }
 
     public synchronized Entry register(UUID id, String name) {
         Entry ex = entries.get(id);
