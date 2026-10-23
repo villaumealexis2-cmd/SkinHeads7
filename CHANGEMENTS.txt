@@ -1,0 +1,19 @@
+SkinHeads - modifications
+
+- SkinStore conserve désormais l'URL source du PNG dans plugins/SkinHeads/players.yml
+  (champ players.<uuid>.source-url).
+- /skinheads info <joueur> affiche l'URL source et le chemin du PNG.
+- Nouvelle commande /skinheads link <joueur> pour afficher uniquement l'URL.
+- Dossier de sortie des PNG configuré sur :
+  plugins/ItemsAdder/content/amethyy/texture/item/skins
+- L'URL source est actualisée à chaque tentative de téléchargement et sauvegardée
+  après les opérations réussies de génération/actualisation.
+
+Note : Maven n'est pas installé dans l'environnement de génération, donc le JAR n'a
+pas pu être recompilé ici. Le ZIP contient le projet source modifié.
+
+
+Mise à jour demandée :
+- Les PNG sont enregistrés dans ItemsAdder/contents/amethyy/textures/items/skins/.
+- Le YAML ItemsAdder référence les textures via items/skins/.
+- L'API est toujours appelée avec le pseudo Minecraft ({name}); l'option api.use-name et le remplacement API par UUID ont été supprimés.

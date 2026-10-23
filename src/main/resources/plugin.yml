@@ -1,0 +1,18 @@
+name: SkinHeads
+version: ${project.version}
+main: fr.amethyy.skinheads.SkinHeadsPlugin
+api-version: "1.21"
+author: Axis
+description: Génère des items ItemsAdder à partir du buste du skin des joueurs.
+softdepend: [ItemsAdder]
+
+commands:
+  skinheads:
+    description: Commandes d'administration de SkinHeads
+    usage: /skinheads <reload|regen|check|give|info|link|remake|emulate>
+    permission: skinheads.admin
+
+permissions:
+  skinheads.admin:
+    description: Accès aux commandes SkinHeads
+    default: op
