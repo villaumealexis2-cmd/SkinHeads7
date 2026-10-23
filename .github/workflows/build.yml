@@ -1,0 +1,28 @@
+name: Build SkinHeads
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+
+      - name: Compiler avec Maven
+        run: mvn -B clean package
+
+      - name: Publier le jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: SkinHeads
+          path: target/SkinHeads.jar
